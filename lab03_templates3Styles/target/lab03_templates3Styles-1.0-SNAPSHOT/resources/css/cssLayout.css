@@ -1,0 +1,54 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Feb 7, 2023, 12:41:09 PM
+    Author     : idont
+*/
+
+#top 
+{
+    position: relative;
+    background-color: gray;
+    padding: 5px;
+    margin: 0px 0px 10px 0px;
+    text-align:center;
+}
+
+#bottom 
+{
+    position: relative;
+    background-color: gray;
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+    text-align:center;
+}
+
+#left 
+{
+    float: left;   
+    background-color: red;
+    position: relative;
+    padding: 5px;
+    width: 150px;    
+    text-align:center;
+}
+
+#right 
+{
+    float: right;    
+    position: relative;
+    background-color: red;
+    padding: 5px;
+    width: 150px;
+    text-align:center;
+}
+
+#content 
+{     
+    background-color: yellow;
+    padding: 5px;   
+    margin: 0px 170px 0px 170px;
+    text-align:center;
+}
