@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/datatable.css"/>
+    </h:head>
+    <h:body>
+
+        <ui:fragment rendered="#{ isMenu eq 'true' ? true : false}">  
+            <p:tooltip globalSelector="true"/>
+            <h:form id="form_menu">
+                <p:growl id="id_message" showDetail="true"/>
+                <p:menubar id="menuBar">
+                    <p:submenu id ="submenu_matrices" label="Matrices" icon="pi pi-th-large">
+                        <p:menuitem title="Addition" id ="menuitem_add" value="Add" disabled="#{!menuBar.isAdditionValid()}"
+                                    action="#{menuBar.add()}"
+                                 
+                                    update="id_message " icon="pi pi-plus-circle"/>
+                        
+                        <p:menuitem title="Multiplication" id ="menuitem_multiply" value="Multiply" disabled="#{!menuBar.isMultiplationValid()}"
+                                    action="#{menuBar.multiply()}"
+                                   
+                                    update="id_message" icon="pi pi-times-circle"/>
+                           
+                        
+                        <p:menuitem title="Subtraction" id ="menuitem_subtract" value="Subtract" disabled="#{!menuBar.isMultiplationValid()}"
+                                    action="#{menuBar.subtract}"
+                                    update="id_message" icon="pi pi-minus-circle"/>
+                    </p:submenu>
+                </p:menubar>
+            </h:form>
+
+        </ui:fragment >  
+
+    </h:body>
+</html>

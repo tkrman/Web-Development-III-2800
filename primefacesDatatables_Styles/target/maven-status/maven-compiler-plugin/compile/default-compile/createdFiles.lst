@@ -1,0 +1,16 @@
+edu\slcc\asdv\beans\MatrixBeanC.class
+edu\slcc\asdv\beans\MatrixOperations.class
+edu\slcc\asdv\resources\JakartaEE91Resource.class
+edu\slcc\asdv\bl\Matrices$MatricesAddition.class
+edu\slcc\asdv\beans\MatrixBeanB.class
+edu\slcc\asdv\beans\MenuBar.class
+edu\slcc\asdv\j\JakartaRestConfiguration.class
+edu\slcc\asdv\termproject1_converters\MyString3.class
+edu\slcc\asdv\bl\Matrix.class
+edu\slcc\asdv\termproject1_converters\MyStringCorverter3.class
+edu\slcc\asdv\termproject1_converters\MyStringCorverter2.class
+edu\slcc\asdv\bl\Matrices$MatricesMultiplication.class
+edu\slcc\asdv\bl\Matrices.class
+edu\slcc\asdv\beans\MatrixBeanA.class
+edu\slcc\asdv\termproject1_converters\MyString2.class
+edu\slcc\asdv\bl\Matrices$MatricesSubtraction.class

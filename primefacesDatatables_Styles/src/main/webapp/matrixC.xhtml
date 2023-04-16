@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <h:form id="formC" >
+            <p:dataTable  class="dataTables" value="#{matrixOperations.getMatrixA().matrix}"  var="row" 
+                         rowIndexVar="i"  
+                         scrollable="true"
+                         paginatorAlwaysVisible="true"
+                         paginator="true"
+                         paginatorPosition = "top"
+                         rows="10"
+                         lazy="true">
+                <f:facet name="header"> MATRIX C </f:facet>
+                <p:columns id="columnsC" value="#{matrixOperations.getMatrixC().getMatrix().get(i)}"  var="arrayListElement" columnIndexVar="j">
+                    <f:facet name="header"> #{j} </f:facet>
+                    <h:outputText class="rowNumber" rendered="#{j eq 0}" value="#{i}"/> 
+                    <h:inputText id="inputTextC" value="#{arrayListElement}" readonly="true" class="input" title="(#{i},#{j})">
+                    </h:inputText> 
+                </p:columns>
+
+            </p:dataTable>
+        </h:form>
+
+    </h:body>
+</html>
+

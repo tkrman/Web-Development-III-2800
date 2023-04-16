@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/datatable.css"/>
+    </h:head>
+    <h:body>
+
+        <h:form id="form_matrix_A">
+                        
+            <p:dataTable  class="dataTables" value="#{matrixOperations.getMatrixA().matrix}"  var="row" 
+                         rowIndexVar="i"  
+                         scrollable="true"
+                         paginatorAlwaysVisible="true"
+                         paginator="true"
+                         paginatorPosition = "top"
+                         rows="10"
+                         lazy="true">
+                <f:facet name="header"> MATRIX A </f:facet>
+                <p:columns value="#{matrixOperations.getMatrixA().getMatrix().get(i)}"  var="arrayListElement" columnIndexVar="j">
+                    <f:facet name="header" class="columnNumber"> #{j} </f:facet>
+                    <h:outputText class="rowNumber" rendered="#{j eq 0}" value="#{i}"/> 
+                    <h:inputText  value="#{arrayListElement}" class="input" title="(#{i},#{j})">
+                        <f:converter converterId="edu.slcc.asdv.termproject1_converters.MyString2"/>
+                        <f:ajax event="keyup" 
+                                listener="#{matrixOperations.getMatrixA().listenForKeyUp(i,j)}"/>
+                    </h:inputText>                                      
+                </p:columns>
+                <f:facet name="footer">
+                        rows: <h:inputText value="#{matrixOperations.getMatrixA().rows}" style="width: 32px"/>
+                        columns: <h:inputText value="#{matrixOperations.getMatrixA().columns}" style="width: 32px"/>
+                        <h:commandButton value="Change sizes" action="#{matrixOperations.getMatrixA().changeRowsColumns()}" />
+                    </f:facet> 
+            </p:dataTable>
+
+        </h:form>
+
+    </h:body>
+</html>
+
