@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>#{msgs.windowTitle}</title>
+    </h:head>
+
+    <h:body style="#{registerForm.background}"  id="mainBody">
+        <h:form>
+            <span class="emphasis">#{msgs.pageTitle}</span>
+            <h:panelGrid columns="2">
+                #{msgs.streetAddressPrompt}
+                <h:inputText value="#{registerForm.streetAddress}"/>
+
+                #{msgs.cityPrompt}
+                <h:inputText value="#{registerForm.city}"/>
+
+                #{msgs.statePrompt}
+                <h:inputText value="#{registerForm.state}"/>
+
+                #{msgs.countryPrompt} 
+                <h:selectOneMenu value="#{registerForm.country}" onchange="submit()">
+                    <f:valueChangeListener type="slcc.beans.CountryListener"/>
+                    <f:selectItems value="#{registerForm.countries}"/>
+                </h:selectOneMenu>
+
+                <h:selectOneMenu value="#{registerForm.country}" onchange="submit()">
+                    <f:valueChangeListener type="slcc.beans.ColorListener"/>
+                    <f:selectItems value="#{registerForm.countries}"/>
+                </h:selectOneMenu>
+
+            </h:panelGrid>
+            <h:commandButton value="#{msgs.submit}"/>
+        </h:form>
+    </h:body>
+</html>
