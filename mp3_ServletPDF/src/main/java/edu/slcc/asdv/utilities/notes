@@ -1,0 +1,3 @@
+>keep only top, login, and logo. (setters/getters, 1 method to validate the credentials by calling database class methods(connect/find user))
+>one bean to pass input of username/password
+> the button/link should take us to index if the user name/password are valid

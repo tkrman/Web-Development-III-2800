@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+
+    </h:head>
+    <h:body>
+
+        <p><a href="pdfServlet1?name=0001.pdf">Download 0001.pdf (doGet())</a></p>
+        
+        <p><a href="pdfServlet1">Download 0001.pdf (doPost())</a></p>
+
+        <h:form>          
+            <h:commandLink  value = "Download 0003.pdf" 
+                            action = "#{callServletBean.callServletPdf1()}" >  
+                <f:param name="pdf1" value="0003.pdf" />
+            </h:commandLink>
+        </h:form>
+        
+        <h:form  >
+            <h:commandLink  value = "Download 0004.pdf" 
+                            action = "#{callServletBean.callServletPdf2()}" >  
+                <f:param name="pdf2" value="0004.pdf" />           
+            </h:commandLink>
+
+        </h:form> 
+    </h:body>
+</html>
