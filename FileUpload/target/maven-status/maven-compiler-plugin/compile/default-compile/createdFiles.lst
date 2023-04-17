@@ -1,0 +1,4 @@
+com\mycompany\fileupload\JakartaRestConfiguration.class
+database\Database.class
+com\mycompany\fileupload\resources\JakartaEE9Resource.class
+bean\FileUploadBean.class
