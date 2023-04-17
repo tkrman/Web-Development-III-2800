@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+
+    </h:head>
+    <h:body>
+
+
+        <p><a href="DownloadServlet?name=last.mp3">Download music file</a></p>
+
+        <h:form  >
+            <h:commandLink  value = "Download music file -- JSF" 
+                            action = "#{callServletBean.callServletMusic()}" >  
+                <f:param name="song" value="last.mp3" />           
+            </h:commandLink>
+
+        </h:form> 
+        
+        
+            <p><a href="movieServlet">GET Download slcc.mp4</a></p>
+
+            
+            
+        <h:form  >          
+            <h:commandLink  value = "POST Download movie file -- JSF" 
+                            action = "#{callServletBean.callServletMovie()}" >  
+                <f:param name="movie_name" value="slcc.mp4" />           
+            </h:commandLink>
+            
+        </h:form>
+            
+            
+
+        
+      
+       
+
+    </h:body>
+</html>
+

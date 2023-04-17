@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            <table>
+                <tr>
+                    <td width="33%"> <ui:include src="/matrices/matrixA.xhtml"/></td>
+
+                    <td width="33%"> <ui:include src="/matrices/matrixB.xhtml"/></td>
+
+                    <td width="33%"> <ui:include src="/matrices/matrixC.xhtml"/></td>
+                </tr>
+            </table>
+            <table style="width:100%" >
+                <tr style= "display: flex; justify-content: center;">
+                    <td > <ui:include src="/matrices/menuConversions.xhtml"/></td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+            </table>
+        </ui:composition>
+    </h:body>
+</html>

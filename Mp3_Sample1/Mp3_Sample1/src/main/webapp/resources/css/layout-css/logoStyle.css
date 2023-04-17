@@ -1,0 +1,9 @@
+#logo {
+    background-image   : url("#{resource['images/shoebill.png']}") ;
+   background-repeat: no-repeat;
+    margin-right: 0px;
+    width:100px;
+    height:160px;
+    float: left;
+    
+}

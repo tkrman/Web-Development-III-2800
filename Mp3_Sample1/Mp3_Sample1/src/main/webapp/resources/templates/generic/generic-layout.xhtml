@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="#{title eq false ? 'css/layout-css/default.css' : 'css/layout-css/titleStyle.css'}"/>  
+        <h:outputStylesheet name="#{loginsearch eq false ? 'css/layout-css/default.css' : 'css/layout-css/login_and_searchStyle.css'}"/>
+        <h:outputStylesheet name="#{top eq false ? 'css/layout-css/default.css' : 'css/layout-css/topStyle.css'}"/>
+        <h:outputStylesheet name="#{bottom eq true ? 'css/layout-css/default.css' : 'css/layout-css/bottomStyle.css'}"/>
+        <h:outputStylesheet name="#{left eq false ? 'css/layout-css/default.css' : 'css/layout-css/stylesLinks.css'}"/>  
+        <h:outputStylesheet name="#{right eq false ? 'css/layout-css/default.css' : 'css/layout-css/rightStyle.css'}"/>  
+        <h:outputStylesheet name="#{content eq false ? 'css/layout-css/default.css' : 'css/layout-css/dataTable.css'}"/>  
+        <h:outputStylesheet name="#{login eq false ? 'css/layout-css/default.css' : 'css/layout-css/loginStyle.css'}"/>
+        <h:outputStylesheet name="#{login_and_search  eq false ? 'css/layout-css/default.css' : 'css/layout-css/login_and_searchStyle.css'}"/>
+
+        <h:outputStylesheet name="#{search eq false ? 'css/layout-css/default.css' : 'css/layout-css/searchStyle.css'}"/>
+        <h:outputStylesheet name="#{menu eq false ? 'css/layout-css/default.css' : 'css/layout-css/menuStyle.css'}"/>
+        <h:outputStylesheet name="#{logo eq false ? 'css/layout-css/default.css' : 'css/layout-css/logoStyle.css'}"/>
+        <title>Generic Template</title>
+    </h:head>
+    <h:body>        
+        <div id="wrapper" 
+             style="margin:auto; width: #{empty wrapperWidth ? '100%' : wrapperWidth}">
+            <ui:fragment rendered="#{empty title ? true : title}">                
+                <div id="title">  <!-- div is needed to associate this div with css for title -->
+                    <ui:insert name="title">
+                        <ui:include src="/resources/default/titleDefault.xhtml" />
+                    </ui:insert>
+                </div>     
+            </ui:fragment>
+            <ui:fragment rendered="#{empty top ? true : top}">
+                <div id="logo_and_top" style="overflow:auto;">
+                    <ui:fragment rendered="#{empty logo ? true : logo}">
+                        <div id="logo">
+                            <ui:insert name="logo">
+                                <ui:include src="/resources/templates/default/logoDefault.xhtml" />
+                            </ui:insert>
+                        </div>
+                    </ui:fragment>
+                    <div id="top">
+                        <ui:insert name="top">
+                            <ui:include src="/resources/templates/default/topDefault.xhtml" />
+                        </ui:insert>
+                    </div>
+                </div>
+            </ui:fragment> 
+            <ui:fragment rendered="#{empty loginsearch ? true : loginsearch}">
+                <div id="login_and_search"> <!-- div is needed for css -->
+                    <ui:fragment rendered="#{empty login ? true : login}">
+                        <div id="login">
+                            <ui:insert name="login">
+                                <ui:include src="/resources/templates/default/loginDefault.xhtml" />
+                            </ui:insert>
+                        </div>
+                    </ui:fragment>
+                    <ui:fragment rendered="#{empty search ? true : search}">
+                        <div id="search">
+                            <ui:insert name="search">
+                                <ui:include src="/resources/templates/default/searchDefault.xhtml" />
+                            </ui:insert>
+                        </div>
+                    </ui:fragment>
+                </div>
+            </ui:fragment>
+
+
+            <ui:fragment rendered="#{empty menu ? true : menu}">
+                <div id="menu">
+                    <ui:insert name="menu">
+                        <ui:include src="/resources/templates/default/menuDefault.xhtml" />
+                    </ui:insert>
+                </div>
+
+            </ui:fragment>
+            <div id="main" style="overflow:auto;">
+
+                <ui:fragment rendered="#{empty left ? true : left}">
+                    <div id="left" 
+                         style="width: #{empty leftWidth ? '150px' : leftWidth}">
+                        <ui:insert name="left">
+                            <ui:include src="/resources/templates/default/leftDefault.xhtml" />
+                        </ui:insert>
+                    </div>
+                </ui:fragment>
+                <ui:fragment rendered="#{empty right ? true : right}">
+                    <div id="right" style="width: #{empty rightWidth ? '150px' : rightWidth}">
+                        <ui:insert name="right">
+                            <ui:include src="/resources/templates/default/rightDefault.xhtml" />
+                        </ui:insert>
+                    </div>
+                </ui:fragment>
+                
+                <ui:fragment rendered="#{empty content ? true : content}">
+                    <div id="content">
+                        <ui:insert name="content">
+                            <ui:include src="/resources/templates/default/contentDefault.xhtml" />
+                        </ui:insert>
+                    </div>
+                </ui:fragment>
+
+
+            </div>
+            <ui:fragment rendered="#{empty bottom ? true : bottom}">
+                <div id="bottom">
+                    <ui:insert name="bottom">
+                        <ui:include src="/resources/templates/default/bottomDefault.xhtml" />
+                    </ui:insert>
+                </div>
+            </ui:fragment>
+        </div>
+    </h:body>
+</html>
