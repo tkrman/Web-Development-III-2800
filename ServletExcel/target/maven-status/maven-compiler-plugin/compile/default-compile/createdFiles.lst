@@ -1,0 +1,6 @@
+beans\CallServletBean1.class
+edu\slcc\asdv\servlets\SpreadsheetServlet.class
+edu\slcc\asdv\servletexcel\JakartaRestConfiguration.class
+edu\slcc\asdv\servletexcel\resources\JakartaEE91Resource.class
+edu\slcc\asdv\servlets\UserTableSpreadsheetServlet.class
+database\Suppliers.class
